@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>27考季基地班 · 宣发日程总览</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0F172A;
+  --surface: #1E293B;
+  --surface2: #273449;
+  --border: #334155;
+  --text: #F1F5F9;
+  --text2: #94A3B8;
+  --accent: #06B6D4;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(135deg, #0B1120 0%, #1E293B 50%, #0F172A 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  overflow: hidden;
+}
+
+/* Animated background particles */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(6,182,212,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(168,85,247,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(74,222,128,0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+  z-index: 1;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #06B6D4, #22D3EE, #A78BFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.header p {
+  font-size: 15px;
+  color: var(--text2);
+  letter-spacing: 0.5px;
+}
+
+.version-tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 10px;
+  border-radius: 20px;
+  background: rgba(6,182,212,0.15);
+  border: 1px solid rgba(6,182,212,0.3);
+  color: #22D3EE;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.cards {
+  display: flex;
+  gap: 32px;
+  z-index: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.card {
+  width: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card-light {
+  background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+  border-color: rgba(0,0,0,0.08);
+}
+
+.card-light:hover {
+  border-color: rgba(31,105,224,0.4);
+  box-shadow: 0 20px 40px rgba(31,105,224,0.15);
+}
+
+.card-bold {
+  background: linear-gradient(135deg, #161E2E 0%, #1E293B 100%);
+  border-color: rgba(6,182,212,0.2);
+}
+
+.card-bold:hover {
+  border-color: rgba(6,182,212,0.5);
+  box-shadow: 0 20px 40px rgba(6,182,212,0.2);
+}
+
+.card-preview {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-light .card-preview {
+  background: linear-gradient(135deg, #F0F1F3 0%, #E8E9ED 100%);
+}
+
+.card-bold .card-preview {
+  background: linear-gradient(135deg, #0B1120 0%, #161E2E 100%);
+}
+
+/* Mini calendar preview for light card */
+.card-light .preview-cal {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  padding: 16px;
+  width: 100%;
+}
+
+.card-light .preview-cal div {
+  height: 14px;
+  border-radius: 2px;
+  background: rgba(0,0,0,0.04);
+}
+
+.card-light .preview-cal div:nth-child(3),
+.card-light .preview-cal div:nth-child(10),
+.card-light .preview-cal div:nth-child(17) {
+  background: rgba(31,105,224,0.15);
+}
+.card-light .preview-cal div:nth-child(7),
+.card-light .preview-cal div:nth-child(14) {
+  background: rgba(74,222,128,0.15);
+}
+.card-light .preview-cal div:nth-child(5),
+.card-light .preview-cal div:nth-child(12) {
+  background: rgba(251,146,60,0.15);
+}
+
+/* Mini calendar preview for bold card */
+.card-bold .preview-cal {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  padding: 16px;
+  width: 100%;
+}
+
+.card-bold .preview-cal div {
+  height: 14px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.05);
+}
+
+.card-bold .preview-cal div:nth-child(3),
+.card-bold .preview-cal div:nth-child(10),
+.card-bold .preview-cal div:nth-child(17) {
+  background: rgba(6,182,212,0.25);
+}
+.card-bold .preview-cal div:nth-child(7),
+.card-bold .preview-cal div:nth-child(14) {
+  background: rgba(74,222,128,0.25);
+}
+.card-bold .preview-cal div:nth-child(5),
+.card-bold .preview-cal div:nth-child(12) {
+  background: rgba(251,146,60,0.25);
+}
+
+.card-body {
+  padding: 24px 24px 28px;
+}
+
+.card-light .card-body {
+  color: #171A1F;
+}
+
+.card-bold .card-body {
+  color: #F1F5F9;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-light .card-title { color: #1F69E0; }
+.card-bold .card-title { color: #22D3EE; }
+
+.card-icon {
+  font-size: 24px;
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.65;
+  margin-bottom: 16px;
+}
+
+.card-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.card-feature {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.card-light .card-feature {
+  background: rgba(31,105,224,0.08);
+  color: #1F69E0;
+}
+
+.card-bold .card-feature {
+  background: rgba(6,182,212,0.12);
+  color: #22D3EE;
+}
+
+.card-arrow {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  font-size: 20px;
+  opacity: 0.4;
+  transition: all 0.3s;
+}
+
+.card:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.card-light .card-arrow { color: #1F69E0; }
+.card-bold .card-arrow { color: #22D3EE; }
+
+.footer {
+  margin-top: 48px;
+  font-size: 12px;
+  color: var(--text2);
+  opacity: 0.5;
+  z-index: 1;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .cards { flex-direction: column; }
+  .card { width: 100%; max-width: 320px; }
+  .header h1 { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>27考季基地班 · 宣发日程总览</h1>
+  <p>选择适合的版本查看完整排课日程</p>
+  <span class="version-tag">V4 2026考季</span>
+</div>
+
+<div class="cards">
+  <!-- 明亮版 -->
+  <a class="card card-light" href="schedule.html">
+    <div class="card-preview">
+      <div class="preview-cal">
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-title">
+        <span class="card-icon">☀️</span>
+        明亮版
+      </div>
+      <div class="card-desc">白色背景，深色文字，适合明亮环境或投屏展示</div>
+      <div class="card-features">
+        <span class="card-feature">浅色主题</span>
+        <span class="card-feature">清晰护眼</span>
+        <span class="card-feature">投屏推荐</span>
+      </div>
+      <span class="card-arrow">→</span>
+    </div>
+  </a>
+
+  <!-- 醒目版 -->
+  <a class="card card-bold" href="schedule_bold.html">
+    <div class="card-preview">
+      <div class="preview-cal">
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-title">
+        <span class="card-icon">🌙</span>
+        醒目版
+      </div>
+      <div class="card-desc">深色背景，高对比配色，色彩更鲜明，重点更突出</div>
+      <div class="card-features">
+        <span class="card-feature">深色主题</span>
+        <span class="card-feature">高对比度</span>
+        <span class="card-feature">色彩鲜明</span>
+      </div>
+      <span class="card-arrow">→</span>
+    </div>
+  </a>
+</div>
+
+<div class="footer">
+  上岸村 · 27考季基地班宣发日程管理系统
+</div>
+
+</body>
+</html>
