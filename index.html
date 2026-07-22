@@ -26,7 +26,6 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--text);
-  overflow: hidden;
 }
 
 /* Animated background particles */
@@ -280,6 +279,83 @@ body::before {
   text-align: center;
 }
 
+/* Update Log */
+.changelog {
+  width: 100%;
+  max-width: 700px;
+  margin-top: 48px;
+  padding: 0 24px;
+  z-index: 1;
+}
+
+.changelog-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.changelog-list {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.changelog-list::-webkit-scrollbar { width: 4px; }
+.changelog-list::-webkit-scrollbar-track { background: transparent; }
+.changelog-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.log-item {
+  display: flex;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(51,65,85,0.5);
+  transition: background 0.2s;
+}
+
+.log-item:last-child { border-bottom: none; }
+.log-item:hover { background: rgba(6,182,212,0.05); }
+
+.log-date {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 90px;
+}
+
+.log-content {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+.log-content strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.log-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.log-tag-fix { background: rgba(239,68,68,0.15); color: #F87171; }
+.log-tag-add { background: rgba(34,197,94,0.15); color: #4ADE80; }
+.log-tag-update { background: rgba(59,130,246,0.15); color: #60A5FA; }
+.log-tag-audit { background: rgba(168,85,247,0.15); color: #C084FC; }
+
 @media (max-width: 720px) {
   .cards { flex-direction: column; }
   .card { width: 100%; max-width: 320px; }
@@ -347,6 +423,32 @@ body::before {
 
 <div class="footer">
   上岸村 · 27考季基地班宣发日程管理系统
+</div>
+
+<div class="changelog">
+  <div class="changelog-title">📋 更新日志</div>
+  <div class="changelog-list">
+    <div class="log-item">
+      <div class="log-date">07-22</div>
+      <div class="log-content"><strong>四川5期盲盒调整</strong> <span class="log-tag log-tag-update">调整</span><br>盲盒下午茶从8/12胡鑫(专项提升考点复盘)调整至8/4雨菲(理论精讲言语考点复盘)</div>
+    </div>
+    <div class="log-item">
+      <div class="log-date">07-15</div>
+      <div class="log-content"><strong>全面终审+盲盒规则更新</strong> <span class="log-tag log-tag-audit">终审</span><br>对照总表Excel修正112处排课; 新增Group A名师班级盲盒5条; 删除广东25期重复盲盒; 广东16期/江苏14期顺延至后续节点</div>
+    </div>
+    <div class="log-item">
+      <div class="log-date">07-11</div>
+      <div class="log-content"><strong>全面终审+节点补全</strong> <span class="log-tag log-tag-audit">终审</span><br>对照每期课表最新版修正176处排课错误; 补全名师节点11/12共85处; 补全节点7/8共17处; 模考编号重新连续编号; 创建schedule-website-manager技能</div>
+    </div>
+    <div class="log-item">
+      <div class="log-date">07-10</div>
+      <div class="log-content"><strong>功能升级+排课修正</strong> <span class="log-tag log-tag-add">新增</span><br>新增"各期班级"筛选模块; 入口页改为版本选择(明亮版/醒目版); 江苏3期杜亮替换为秦川; 广州1期7-8月排课修正55处; 排课格式标准化43处</div>
+    </div>
+    <div class="log-item">
+      <div class="log-date">07-07</div>
+      <div class="log-content"><strong>系统初始构建</strong> <span class="log-tag log-tag-add">新建</span><br>27考季基地班宣发日程总览上线，33个班级、255个日期、3218条排课数据，13大宣发节点系统，企业微信每日推送</div>
+    </div>
+  </div>
 </div>
 
 </body>
