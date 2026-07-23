@@ -429,6 +429,22 @@ body::before {
   <div class="changelog-title">📋 更新日志</div>
   <div class="changelog-list">
     <div class="log-item">
+      <div class="log-date">07-24</div>
+      <div class="log-content"><strong>新增节点14"行测申论全真模考"</strong> <span class="log-tag log-tag-add">新增</span><br>为"行测申论全真模考"单独设立第14个宣发节点; 190条行测申论全真模考的ns从节点7拆分到节点14; 前端"13大节点"更新为"14大节点"; 节点7仅保留行测全真模考(160条)</div>
+    </div>
+    <div class="log-item">
+      <div class="log-date">07-24</div>
+      <div class="log-content"><strong>区分"行测申论全真模考"与"行测全真模考"</strong> <span class="log-tag log-tag-update">调整</span><br>发现Excel中有两类模考但HTML全部标为"行测全真模考"; 全面扫描23个班共190处"行测申论全真模考"已单独设立dt类型并更新ci; 前端新增深红色样式; 模考编号统一连续; 行测申论全真模考190条/行测全真模考160条</div>
+    </div>
+    <div class="log-item">
+      <div class="log-date">07-24</div>
+      <div class="log-content"><strong>全面质检修复排课错误</strong> <span class="log-tag log-tag-fix">修正</span><br>发现Agent更新排课时误用Excel旧月份段落(非首次出现策略)，导致7个班排课与实际课表不符; 用正确的首次出现策略重新解析Excel并重建排课，共修复198处(广州2期30处/广东25期28处/江苏24期15处/四川5期19处/河南8期52处/河南15期37处/广东29期17处); 模考编号重新连续; 残留错误=0</div>
+    </div>
+    <div class="log-item">
+      <div class="log-date">07-24</div>
+      <div class="log-content"><strong>对照新Excel全面更新排课</strong> <span class="log-tag log-tag-update">调整</span><br>对照【总表】27高三严管式公考基地班(5).xlsx更新9个班排课约96处(广州2期/广东12期/广东25期/江苏14A期/江苏24期/四川5期/河南8期/河南15期/山西22期); 新增2个班完整排课(广东29期92条/湖北30期89条); 模考编号重新连续; 盲盒20条保持不变; 两版HTML一致性校验通过</div>
+    </div>
+    <div class="log-item">
       <div class="log-date">07-22</div>
       <div class="log-content"><strong>盲盒下午茶全盘调整</strong> <span class="log-tag log-tag-update">调整</span><br>新增4班8月盲盒: 江苏3期8/2解三元、广东12期8/15解三元、广州1期8/18章晓铭、广州2期8/31章晓铭; 取消河南8期(7/24肖玉); 9月3班盲盒迁移至8月并更新名师: 江苏24期9/10张弓→8/28云锋、江苏14期9/17忠政→8/20徐子牧、河南26期9/30肖玉→8/30何聃; 盲盒总数17→20，全部集中在7-8月; 确认浙江6期/陕西9期/贵州10期为取消开班班级不排盲盒; 快照记忆刷新至20盲盒新基准</div>
     </div>
