@@ -429,6 +429,14 @@ body::before {
   <div class="changelog-title">📋 更新日志</div>
   <div class="changelog-list">
     <div class="log-item">
+      <div class="log-date">09-01</div>
+      <div class="log-content"><strong>修复山西32期+重建5个暑期班排课</strong> <span class="log-tag log-tag-fix">修正</span><br>修复山西32期: 删除8条旧课表残留条目(9/3~9/10,与9/11开始的正确排课重复), 盲盒从9/7移至9/15(判断郝志昊最后一天); 重建5个暑期班排课: 广东13A期45条(月度课表重建,理论精讲31天)/河南15A期49条(申论分段7/22+8/26~30)/山东18A期46条/广东21A期35条(27天无考点复盘)/江苏14A期43条(Excel课表安排重解析); 原因: v9更新Agent删除了无"课表安排"sheet的暑期班数据; 两版一致✅ JS语法✅</div>
+    </div>
+    <div class="log-item">
+      <div class="log-date">08-31</div>
+      <div class="log-content"><strong>对照v9总表Excel全面修正+新增6个班</strong> <span class="log-tag log-tag-update">调整</span><br>对照【总表】27高三严管式公考基地班(9).xlsx逐班逐日期严格比对27个班共371处差异全部修正: 系统性修复13个班"预计"dt(32处)+12个班实质排课重建(339处: 江西28期63处/江苏14A期68处/广东25期54处/江苏24期39处/广东21期33处/河南26期23处/山西20期20处/河南8期17处/广东16期9处/山西22期7处/湖北11期5处/广东12期1处); 新增6个班: 密训班广东36期(49条)/强化班江苏34期(63条)/强化班山东33期(68条)/国考全程班河南26A期(95条)/国考全程班湖北30A期(97条)/国考全程班江西28A期(68条); 修复re.sub导致JSON损坏问题(改用brace-matching); 严格比对27/27班全部✅一致 0差异; 最终37班级238dd 18盲盒 14节点; 两版一致✅ JS语法✅</div>
+    </div>
+    <div class="log-item">
       <div class="log-date">08-23</div>
       <div class="log-content"><strong>对照8.23 Excel更新3个班排课</strong> <span class="log-tag log-tag-update">调整</span><br>对照排课更新8.23.xlsx更新3个班: 广东13期+13C期回退8/19变更(删10/7+恢复10/8~14原排课+10/19恢复行测全真模考); 广东29期全面重建为强化班(73条: 专项刷题24天+套卷冲刺18天+科学推理2天, 班级类型改为强化班, 补充师资, 物料筹备调整至9/18~20); 山东4期修正(7处"政治韩晓明"→"常识韩晓明"+10/19~25排课调整); 修复Excel重复月份块解析问题; 两版一致✅ JS语法✅</div>
     </div>
